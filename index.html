@@ -422,9 +422,9 @@
   /* ── CERTIFICATIONS ── */
   .cert-card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 1.5rem;
+    border-radius: 16px; padding: 1.2rem;
     text-decoration: none; color: var(--text);
-    display: flex; flex-direction: column; gap: 0.6rem;
+    display: flex; flex-direction: column; gap: 0.7rem;
     transition: all 0.3s; position: relative; overflow: hidden;
   }
   .cert-card::before {
@@ -434,17 +434,17 @@
   }
   .cert-card:hover::before { transform: scaleX(1); }
   .cert-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); border-color: rgba(0,198,255,0.25); }
-  .cert-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
-  .cert-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-  .cert-thumb { width: 60px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
-  .cert-badge {
-    font-size: 0.72rem; padding: 0.25rem 0.8rem; border-radius: 50px;
+  .cert-thumb { width: 100%; aspect-ratio: 16/10; border-radius: 10px; object-fit: cover; border: 1px solid var(--border); background: #fff; }
+  .cert-view-btn {
+    align-self: center; font-size: 0.78rem; padding: 0.45rem 1.4rem; border-radius: 50px;
     background: rgba(0,198,255,0.1); border: 1px solid rgba(0,198,255,0.3);
     color: var(--accent); font-weight: 600; letter-spacing: 0.3px;
+    transition: all 0.2s;
   }
-  .cert-title { font-size: 0.95rem; font-weight: 700; color: var(--text); line-height: 1.4; }
-  .cert-issuer { font-size: 0.82rem; color: var(--accent2); font-weight: 600; }
-  .cert-date { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; margin-top: auto; }
+  .cert-card:hover .cert-view-btn { background: var(--accent); color: #000; }
+  .cert-title { font-size: 0.95rem; font-weight: 700; color: var(--text); line-height: 1.4; text-align: center; }
+  .cert-issuer { font-size: 0.82rem; color: var(--accent2); font-weight: 600; text-align: center; }
+  .cert-date { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
 
   /* ── FOOTER ── */
   footer {
@@ -814,6 +814,27 @@
     </div>
 
     <div class="project-card reveal">
+      <span class="project-featured">New</span>
+      <div class="project-top">
+        <div class="project-icon" style="background: linear-gradient(135deg,rgba(0,198,255,0.15),rgba(0,198,255,0.05))">📈</div>
+        <div class="project-links">
+          <a href="https://github.com/Murali-Manohara/NeuroTrade" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-org">Personal Project</p>
+        <h3 class="project-title">NeuroTrade — AI Stock Signal Prediction Platform</h3>
+        <p class="project-desc">An AI-powered platform that generates Buy, Hold, and Sell trading signals by combining XGBoost, LightGBM, and LSTM models through a stacking ensemble. Captures both short-term market signals and long-term sequential patterns using technical indicators (RSI, MACD, Bollinger Bands, ATR), with predictions served via a FastAPI backend and interactive dashboard.</p>
+        <div class="project-metric"><i class="fas fa-chart-line"></i> Stacking Ensemble · XGBoost + LightGBM + LSTM</div>
+        <div class="project-tags">
+          <span class="ptag">Python</span><span class="ptag">TensorFlow</span><span class="ptag">Keras</span>
+          <span class="ptag">LSTM</span><span class="ptag">XGBoost</span><span class="ptag">LightGBM</span>
+          <span class="ptag">FastAPI</span><span class="ptag">Time Series</span><span class="ptag">Ensemble Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
       <div class="project-top">
         <div class="project-icon" style="background: linear-gradient(135deg,rgba(247,151,30,0.15),rgba(247,151,30,0.05))">📊</div>
         <div class="project-links">
@@ -910,27 +931,6 @@
         </div>
       </div>
     </div>
-
-    <div class="project-card reveal">
-      <span class="project-featured">New</span>
-      <div class="project-top">
-        <div class="project-icon" style="background: linear-gradient(135deg,rgba(0,198,255,0.15),rgba(0,198,255,0.05))">📈</div>
-        <div class="project-links">
-          <a href="https://github.com/Murali-Manohara/NeuroTrade" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-      <div class="project-body">
-        <p class="project-org">Personal Project</p>
-        <h3 class="project-title">NeuroTrade — AI Stock Signal Prediction Platform</h3>
-        <p class="project-desc">An AI-powered platform that generates Buy, Hold, and Sell trading signals by combining XGBoost, LightGBM, and LSTM models through a stacking ensemble. Captures both short-term market signals and long-term sequential patterns using technical indicators (RSI, MACD, Bollinger Bands, ATR), with predictions served via a FastAPI backend and interactive dashboard.</p>
-        <div class="project-metric"><i class="fas fa-chart-line"></i> Stacking Ensemble · XGBoost + LightGBM + LSTM</div>
-        <div class="project-tags">
-          <span class="ptag">Python</span><span class="ptag">TensorFlow</span><span class="ptag">Keras</span>
-          <span class="ptag">LSTM</span><span class="ptag">XGBoost</span><span class="ptag">LightGBM</span>
-          <span class="ptag">FastAPI</span><span class="ptag">Time Series</span><span class="ptag">Ensemble Learning</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 <section id="github">
@@ -997,22 +997,19 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;">
 
     <!-- 1. Great Lakes PGP -->
+    <!-- 1. Great Lakes PGP -->
     <a href="https://www.mygreatlearning.com/certificate/ZQWDGLAB" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert1.jpg" alt="Great Lakes PGP Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert1.jpg" alt="Great Lakes PGP Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">PGP in Data Science with Specialization in GenAI</h3>
-      <p class="cert-issuer">Great Lakes Executive Learning</p>
+      <p class="cert-issuer">Great Lakes Institute of Management</p>
       <p class="cert-date"><i class="fas fa-calendar-alt"></i> April 2026</p>
     </a>
 
     <!-- 2. CodTech AI Internship -->
     <a href="https://codtechlearning.com/api/certificates/verify-standalone/A71366B298244CF6" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert2.jpg" alt="CodTech AI Internship Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert2.jpg" alt="CodTech AI Internship Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">Artificial Intelligence — Internship Certificate</h3>
       <p class="cert-issuer">Codtech IT Solutions Pvt. Ltd</p>
       <p class="cert-date"><i class="fas fa-calendar-alt"></i> April – May 2026</p>
@@ -1020,10 +1017,8 @@
 
     <!-- 3. Zephyr Data Science -->
     <a href="https://drive.google.com/file/d/1zwEXqNtX43EpMQMTm6A-FAnYCFRvJ1yt/view?usp=sharing" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert3.jpg" alt="Zephyr Data Science Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert3.jpg" alt="Zephyr Data Science Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">Data Science using Python — Internship</h3>
       <p class="cert-issuer">Zephyr Technologies and Solutions Pvt Ltd</p>
       <p class="cert-date"><i class="fas fa-calendar-alt"></i> August 2022</p>
@@ -1031,10 +1026,8 @@
 
     <!-- 4. Tata Forage -->
     <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_xXpMGRwjnJGPetJgc_1780335908997_completion_certificate.pdf" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert4.jpg" alt="Tata Forage Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert4.jpg" alt="Tata Forage Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">GenAI Powered Data Analytics Job Simulation</h3>
       <p class="cert-issuer">Tata · Forage</p>
       <p class="cert-date"><i class="fas fa-calendar-alt"></i> June 2026</p>
@@ -1042,43 +1035,35 @@
 
     <!-- 5. Great Learning GenAI -->
     <a href="https://www.mygreatlearning.com/certificate/XJXYXWGF" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert5.jpg" alt="Great Learning GenAI Essentials Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert5.jpg" alt="Great Learning GenAI Essentials Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">Generative AI Essentials</h3>
       <p class="cert-issuer">Great Learning</p>
-      <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</p>
+      <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2026</p>
     </a>
 
     <!-- 6. Udemy Excel -->
     <a href="https://www.udemy.com/certificate/UC-d07ec2d6-732d-4d4b-a3f3-ac67205e6865/" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert6.jpg" alt="Udemy Excel Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert6.jpg" alt="Udemy Excel Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">Microsoft Excel — Beginner to Advanced</h3>
       <p class="cert-issuer">Udemy</p>
-      <p class="cert-date"><i class="fas fa-calendar-alt"></i> May 2026 · 22.5 hrs</p>
+      <p class="cert-date"><i class="fas fa-calendar-alt"></i> May 2026</p>
     </a>
 
     <!-- 7. Great Learning Excel -->
     <a href="https://www.mygreatlearning.com/certificate/PRXCVYXS" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert7.jpg" alt="Great Learning Excel Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert7.jpg" alt="Great Learning Excel Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">Data Analytics using Excel</h3>
       <p class="cert-issuer">Great Learning</p>
-      <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</p>
+      <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2026</p>
     </a>
 
     <!-- 8. Rinex IoT (no link) -->
     <div class="cert-card reveal" style="cursor:default">
-      <div class="cert-top">
-        <img src="certs/cert8.jpg" alt="Rinex IoT Certificate" class="cert-thumb"/>
-        <span class="cert-badge" style="background:rgba(255,255,255,0.05);color:var(--muted);border-color:var(--border)">Completed</span>
-      </div>
+      <img src="certs/cert8.jpg" alt="Rinex IoT Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn" style="background:rgba(255,255,255,0.05);color:var(--muted);border-color:var(--border)">Completed</span>
       <h3 class="cert-title">Internet of Things & Robotics — Internship</h3>
       <p class="cert-issuer">Rinex Technology</p>
       <p class="cert-date"><i class="fas fa-calendar-alt"></i> Jan – Mar 2022</p>
@@ -1086,13 +1071,11 @@
 
     <!-- 9. HackerRank SQL Advanced -->
     <a href="https://www.hackerrank.com/certificates/iframe/3231a69de02b" target="_blank" class="cert-card reveal">
-      <div class="cert-top">
-        <img src="certs/cert9.jpg" alt="HackerRank SQL Advanced Certificate" class="cert-thumb"/>
-        <span class="cert-badge">View Certificate ↗</span>
-      </div>
+      <img src="certs/cert9.jpg" alt="HackerRank SQL Advanced Certificate" class="cert-thumb"/>
+      <span class="cert-view-btn">View Certificate ↗</span>
       <h3 class="cert-title">SQL (Advanced) — Certificate of Accomplishment</h3>
       <p class="cert-issuer">HackerRank</p>
-      <p class="cert-date"><i class="fas fa-calendar-alt"></i> 13 Jun, 2026</p>
+      <p class="cert-date"><i class="fas fa-calendar-alt"></i> June 2026</p>
     </a>
 
   </div>
